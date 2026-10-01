@@ -17,6 +17,33 @@ services:
         volumes:
             - redis-data:/data
         restart: unless-stopped
+    anubis:
+        image: ghcr.io/techarohq/anubis:latest
+        environment:
+            BIND: ":8079"
+            COOKIE_SECURE: "false"
+            DIFFICULTY: "4"
+            # METRICS_BIND: ":9090"
+            SERVE_ROBOTS_TXT: "true"
+            TARGET: "http://web:8080"
+            POLICY_FNAME: "/data/cfg/botPolicy.yaml"
+            OG_PASSTHROUGH: "true"
+            OG_EXPIRY_TIME: "24h"
+            # Anubis posila provoz na branu hostitelskeho stroje
+            ANUBIS_UPSTREAM_URL: http://docker.internal
+        extra_hosts:
+            # Tento radek vytvori uvnitr kontejneru DNS zaznam pro IP adresu vaseho serveru
+            - "host.docker.internal:host-gateway"
+        healthcheck:
+            test: ["CMD", "anubis", "--healthcheck"]
+            interval: 60s
+            timeout: 30s
+            retries: 5
+            start_period: 500ms
+        ports:
+            - 8079:8079
+        volumes:
+            - "./botPolicy.yaml:/data/cfg/botPolicy.yaml:ro"
 
 volumes:
     redis-data:
