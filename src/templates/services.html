@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 
 
-    <script src="{{  url_for('static', filename='scripts/index.js')  }}"></script>
-    <link rel="stylesheet" href="{{  url_for('static', filename='styles/index.css')  }}">
+{% block title %}Services | danb1551.cz{% endblock %}
 
-{% block title %} {% endblock %}
+{% block page_name %}Services{% endblock %}
 
 {% block main %}
         <div class="big-text">
@@ -12,7 +11,7 @@
         </div>
         <div>
             <p>Creating website</p>
-            <p>Hosting projects</p>
+            <p>Hosting projects/websites/VPS</p>
             <p>Choose/build computers</p>
             <p>Install software on your PC</p>
         </div>

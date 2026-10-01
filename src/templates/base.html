@@ -7,6 +7,7 @@
     <script src="{{  url_for('static', filename='scripts/index.js')  }}"></script>
     <link rel="stylesheet" href="{{  url_for('static', filename='styles/index.css')  }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    {% block head_data %}{% endblock %}
 </head>
 <body onload="init()">
     <header>
@@ -20,7 +21,7 @@
             <a href="/portfolio">Portfolio</a>
         </nav>
         <div class="header--contact">
-            <a href="/cv"><img src="{{  url_for('static', filename='img/download-icon.png')  }}" alt="download icon">CV</a>
+            <a href="/cv"><!--<img src="{{  url_for('static', filename='img/download-icon.png')  }}" alt="download icon">-->CV</a>
             <a href="/contact">Contact</a>
         </div>
     </header>
@@ -28,7 +29,7 @@
         {% block main %}
         <div class="big-text">
             <h1>Daniel Balcar</h1>
-            <h2>- Full-stack Developer</h2>
+            <h2>- DevOps Engineer</h2>
         </div>
         <div class="me-online">
             <h3>Follow me on-line:</h3>

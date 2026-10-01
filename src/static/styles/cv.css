@@ -1,0 +1,74 @@
+body {
+    background: none;
+}
+
+.main-box {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    padding: 2.5% 10%;
+}
+
+.left {
+    width: 30%;
+    text-align: center;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.right {
+    width: 70%;
+    text-align: center;
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.left h1 {
+    margin: 0;
+}
+
+#showEmail {
+    cursor: pointer;
+}
+
+.email p, .email a {
+    color: rgb(3, 0, 43);
+    margin: 0px;
+}
+#showPhone {
+    cursor: pointer;
+}
+
+.phone p, .phone a {
+    color: rgb(3, 0, 43);
+    margin: 0px;
+}
+
+.hr {
+    height: 2px;
+    width: 100%;
+    background-color: black;
+}
+
+h2, h3 {
+    margin: 0;
+}
+
+.block p {
+    margin: 1px;
+}
+
+.right h3 {
+    font-weight: 500;
+}
+
+.text-block {
+    text-align: left;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}

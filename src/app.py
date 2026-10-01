@@ -20,7 +20,7 @@ def create_app() -> Flask:
 
     @app.route("/favicon.ico")
     def favicon():
-        return url_for('static', filename="img/favicon.ico")
+        return url_for('static', filename="img/favicon.ico"), 200
 
     @app.route("/", methods=["GET"])
     def home():
@@ -38,7 +38,7 @@ def create_app() -> Flask:
 
     @app.route("/portfolio")
     def portfolio():
-        return render_template("portfolio.html")
+        return render_template("portfolio.html"), 200
 
     @app.route("/cv", methods=["GET"])
     def cv():

@@ -1,13 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>danb1551 | pages/portfolio</title>
-    <script src="{{  url_for('static', filename='scripts/index.js')  }}"></script>
-    <link rel="stylesheet" href="{{  url_for('static', filename='styles/index.css')  }}">
-</head>
-<body>
-    <img src="{{  url_for('static', filename='image.png')  }}" alt="" style="width: 100%;">
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Curriculum vitae{% endblock %}
+
+{% block head_data %}
+    <link rel="stylesheet" href="{{  url_for('static', filename='styles/cv.css')  }}">
+    <script src="{{  url_for('static', filename='scripts/cv.js')  }}"></script>
+{% endblock %}
+
+{% block page_name %}Curriculum vitae{% endblock %}
+
+{% block main %}
+    <div class="main-box">
+        <div class="left">
+            <div class="hr"></div>
+            <h1>Daniel Balcar</h1>
+            <div class="hr"></div>
+            <i class="fa-regular fa-envelope fa-2x"></i>
+            <div id="email" class="email">
+                <p onclick="showEmail()" id="showEmail">Zobrazit email</p>
+            </div>
+            <i class="fa-solid fa-phone fa-2x"></i>
+            <div id="phone" class="phone">
+                <p onclick="showPhone()" id="showPhone">Zobrazit tel. číslo</p>
+            </div>
+            <div class="hr"></div>
+            <h2>Vzdělání</h2>
+            <div class="block">
+                <h3>2024-2028</h3>
+                <p>SPŠE a VOŠ Pardubice</p>
+                <p>IT - vývoj aplikací</p>
+            </div>
+            <div class="hr"></div>
+            <h2>Dovednosti</h2>
+            <div class="block">
+                <p>Přirozená racionalita</p>
+                <p>Samostatnost</p>
+                <p>Práce v kolektivu</p>
+                <p>Komunikace</p>
+                <p>Přirozená inteligence</p>
+                <p>Intuitivní usuzování</p>
+                <p></p>
+            </div>
+            <div class="hr"></div>
+            <h2>Jazyky</h2>
+            <div class="block">
+                <p>Němčina: A1</p>
+                <p>Angličtina: C1</p>
+                <p>Japonština: A1</p>
+                <p>Čeština: C2</p>
+            </div>
+        </div>
+        <div class="right">
+            <div class="hr"></div>
+            <h2>Odborné praxe a stáže</h2>
+            <h3>Květen 2026 - UNICORN - Tester</h3>
+            <div class="hr"></div>
+            <h2>Zaměstnání</h2>
+            <h3>Hrdý odpůrce práce</h3>
+            <div class="hr"></div>
+            <h2>Práce na projektech</h2>
+            <h3>
+                <a href="https://prodejrozumne.cz">prodejrozumne.cz</a>
+                 - <a href="https://seznamkadiskretne.cz">seznamkadiskretne.cz</a>
+                 - <a href="https://reality111.cz">reality111.cz</a>
+            </h3>
+            <div class="hr"></div>
+            <h2>Znalosti</h2>
+            <div class="block center">
+                <div class="text-block">
+                    <p>Jazyky: Python, JavaScript, Java, SQL, PHP, HTML, C++</p>
+                    <p>Nástroje: Vim, git, docker, systemd, VS code, JetBrains toolbox, MS Office</p>
+                    <p>Platformy: <a href="https://github.com/danb1551">GitHub</a></p>
+                    <p>Systémy: Linux (Arch Linux btw!), Windows</p>
+                    <p>Frameworky: flask, M5</p>
+                </div>
+            </div>
+            <div class="hr"></div>
+            <h2>Zájmy a povaha</h2>
+            <div class="block center">
+                <div class="text-block">
+                    <p>Zájmy: Linux, programování, technologie, anime, přemýšlení, klávesy, arduino a M5Stack, běhání</p>
+                    <p>Povaha: pracovitost, proaktivní přístup k neustálému rozvoji</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
