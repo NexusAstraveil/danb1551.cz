@@ -9,4 +9,4 @@ DEBUG = os.getenv("DEBUG") == "True"
 app = create_app()
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port= 80 if not DEBUG else 8080, debug=DEBUG)
+    app.run(host="0.0.0.0", port=8080, debug=DEBUG)
