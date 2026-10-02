@@ -10,15 +10,18 @@
     --bg-header: #1F1F21;
     --fg-header: #F2F2F2;
     --bg-main: transparent;
-    --bg-footer: rgb(255, 202, 111);
-    --fg-footer: rgb(61, 0, 102);
+    --bg-footer: transparent;
+    --fg-footer: rgb(16, 0, 27);
 }
 
 body {
+    min-height: 100vh;
     margin: 0px;
     background: var(--bg);
     background-repeat: no-repeat;
     font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -54,7 +57,7 @@ nav a {
 }
 
 nav a:hover, a.active {
-    border-bottom: 2px solid var(--fg-header);
+    border-bottom: 2px solid var(--bg-header);
     border-inline-start: 15px;
 }
 
@@ -90,6 +93,8 @@ nav a:hover, a.active {
 main {
     background: var(--bg-main);
     padding: 24px 5%;
+    min-height: max-content;
+    flex: 1;
 }
 
 main .big-text {
@@ -139,6 +144,13 @@ main .big-text h2 {
 footer {
     background: var(--bg-footer);
     color: var(--fg-footer);
+    padding: 16px;
+    margin: 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    margin: 0;
 }
 
 /* projects */
@@ -179,11 +191,4 @@ main.projects section a {
 
 .projects section {
     gap: 24px;
-}
-
-.endora-panel {
-    width: 0px;
-    height: 0px;
-    visibility: collapse;
-    display: none;
 }

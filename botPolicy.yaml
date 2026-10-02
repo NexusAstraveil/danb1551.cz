@@ -15,3 +15,6 @@ bots:
   - name: generic-browser
     user_agent_regex: Mozilla
     action: CHALLENGE
+  - name: amazonbot
+    user_agent_regex: Amazonbot
+    action: DENY

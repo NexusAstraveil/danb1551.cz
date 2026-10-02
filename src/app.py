@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_file, url_for, request, jsonify, session
+from flask import Flask, render_template, send_file, url_for, request, jsonify, session, redirect
 import redis
 import os
 
@@ -6,6 +6,15 @@ def create_app() -> Flask:
     USE_REDIS = True
     app = Flask(__name__)
     app.secret_key = os.getenv("SECRET_KEY")
+
+    # Prohlížeč pošle cookie pouze přes šifrované HTTPS připojení
+    app.config['SESSION_COOKIE_SECURE'] = True  
+
+    # Skripty (JavaScript) nebudou mít ke cookie přístup (ochrana proti XSS)
+    app.config['SESSION_COOKIE_HTTPONLY'] = True  
+
+    # Ochrana proti CSRF útokům (cookie se neodešle při kliknutí z cizího webu)
+    app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 
     if USE_REDIS:
         redis_cache = redis.Redis(
@@ -15,7 +24,7 @@ def create_app() -> Flask:
         redis_cache.incr("visits")
 
     @app.errorhandler(404) # type: ignore
-    def NotFound():
+    def NotFound(error):
         return render_template("errors/404.html"), 404
 
     @app.route("/favicon.ico")
@@ -61,13 +70,18 @@ def create_app() -> Flask:
         if request.method == "GET":
             return render_template("login.html")
         # yeah, I know. Don't deserve heaven
-        elif request.method == "POST" and request.form.get("username") == os.getenv("ADMIN_USERNAME") and request.form.get("password") == os.getenv("ADMIN_PASSWORD"):
+        elif request.method == "POST":
+            if not request.form.get("username") == os.getenv("ADMIN_USERNAME"): return
+            if not request.form.get("password") == os.getenv("ADMIN_PASSWORD"): return
             session["username"] = "ADMIN"
-            return "success - loged in", 200
+            return redirect("/admin")
 
-    @app.route("/admin")
+    @app.route("/admin", methods=["GET"])
     def admin():
-        return render_template("admin/index.html")
+        if session.get("username") == "ADMIN":
+            return render_template("admin/index.html")
+        else:
+            return redirect("/login", code=302)
         
 
     return app

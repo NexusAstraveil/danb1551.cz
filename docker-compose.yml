@@ -29,7 +29,7 @@ services:
             TARGET: "http://web:8080"
             POLICY_FNAME: "/data/cfg/botPolicy.yaml"
             OG_PASSTHROUGH: "true"
-            OG_EXPIRY_TIME: "24h"
+            OG_EXPIRY_TIME: "1h"
             # Anubis posila provoz na branu hostitelskeho stroje
             ANUBIS_UPSTREAM_URL: http://docker.internal
         extra_hosts:
@@ -37,7 +37,7 @@ services:
             - "host.docker.internal:host-gateway"
         healthcheck:
             test: ["CMD", "anubis", "--healthcheck"]
-            interval: 60s
+            interval: 600s
             timeout: 30s
             retries: 5
             start_period: 500ms

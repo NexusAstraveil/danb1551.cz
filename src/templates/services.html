@@ -5,14 +5,32 @@
 
 {% block page_name %}Services{% endblock %}
 
+{% block head_data %}
+    <link rel="stylesheet" href="{{  url_for('static', filename='styles/services.css')  }}">
+{% endblock %}
+
 {% block main %}
         <div class="big-text">
             <h1>Services</h1>
         </div>
-        <div>
-            <p>Creating website</p>
-            <p>Hosting projects/websites/VPS</p>
-            <p>Choose/build computers</p>
-            <p>Install software on your PC</p>
-        </div>
+        <section class="cards">
+            <article class="card img-websites">
+                <div class="card-text">
+                    <h1>Creating websites</h1>
+                    <p>Full-service web development: delivering lightweight static sites for maximum speed, as well as powerful dynamic platforms for complex functionality.</p>
+                </div>
+            </article>
+            <article class="card img-hosting">
+                <div class="card-text">
+                    <h1>Hosting apps</h1>
+                    <p>All-in-one hosting infrastructure: delivering secure, high-uptime environments for modern web applications and lag-free, protected servers for Minecraft communities.</p>
+                </div>
+            </article>
+            <article class="card img-support">
+                <div class="card-text">
+                    <h1>IT support</h1>
+                    <p>Comprehensive IT services: from secure server administration and fast troubleshooting to expert component selection and high-performance custom PC building.</p>
+                </div>
+            </article>
+        </section>
 {% endblock %}
