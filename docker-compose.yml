@@ -20,6 +20,7 @@ services:
         restart: unless-stopped
     anubis:
         image: ghcr.io/techarohq/anubis:latest
+        container_name: anubis
         environment:
             BIND: ":8079"
             COOKIE_SECURE: "false"
