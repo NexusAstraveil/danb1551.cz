@@ -4,35 +4,31 @@
 
 {% block page_name %}Projects{% endblock %}
 
+{% block head_data %}
+    <link rel="stylesheet" href="{{  url_for('static', filename='styles/projects.css')  }}">
+{% endblock %}
+
 {% block main %}
-    <div class="projects">
-        <section class="projects-h">
+        <div class="big-text">
             <h1>Projects</h1>
-            <h2>Proud projects</h2>
-        </section>
-        <section class="proud">
+        </div>
+        <section class="projects">
+            <a href="https://github.com/danb1551/SmartWatch">
+                <article>
+                    <h1>SmartWatch</h1>
+                    <p>M5StackC PLUS2 watch code with IR</p>
+                </article>
+            </a>
             <a href="https://github.com/danb1551/canvalib">
                 <article>
-                    <h1>canvalib</h1>
-                    <p>Create canvas in terminal with python package</p>
+                    <h1>Canvalib</h1>
+                    <p>Create canvas in terminal with python</p>
                 </article>
             </a>
             <a href="https://github.com/danb1551/TdA26-MamutRachal">
                 <article>
                     <h1>Tour de App 26</h1>
                     <p>Result of participation in Tour de App competition</p>
-                </article>
-            </a>
-            <a href="https://github.com/danb1551/css-grid-helper">
-                <article>
-                    <h1>CSS grid helper</h1>
-                    <p>Rendering boxes in terminal (to help me imagine grid working in CSS)</p>
-                </article>
-            </a>
-            <a href="https://github.com/danb1551/pymine-bot">
-                <article>
-                    <h1>PyMine bot</h1>
-                    <p>Choosing best tool to mine basic blocks in minecraft</p>
                 </article>
             </a>
             <a href="https://github.com/danb1551/files-commander">
@@ -48,15 +44,4 @@
                 </article>
             </a>
         </section>
-        <!--<section class="projects-h">
-            <h2>Hopeles projects</h2>
-        </section>
-        <section class="less-proud">
-            <a href="https://github.com/danb1551/">
-                <article>
-                    <h1>Labyrint</h1>
-                    <p>Game labyrint created in Godot</p>
-                </article>
-            </a>
-        </section>-->
 {% endblock %}

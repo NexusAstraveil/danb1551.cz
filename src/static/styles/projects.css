@@ -1,0 +1,33 @@
+
+/* projects */
+
+.projects h1.top-h1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 48px;
+}
+
+.projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.projects a article {
+    color: black;
+}
+.projects a {
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 24px;
+    text-decoration: none;
+    width: 15%;
+    min-height: 160px;
+    max-height: 320px;
+}
+
+.projects a article h1:hover {
+    text-decoration: underline;
+}
