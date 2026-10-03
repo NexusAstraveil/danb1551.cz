@@ -29,7 +29,7 @@ def create_app() -> Flask:
 
     @app.route("/favicon.ico")
     def favicon():
-        return url_for('static', filename="img/favicon.ico"), 200
+        return send_file("static/img/favicon.ico"), 200
 
     @app.route("/", methods=["GET"])
     def home():
