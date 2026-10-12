@@ -82,6 +82,11 @@ def create_app() -> Flask:
             return render_template("admin/index.html")
         else:
             return redirect("/login", code=302)
+
+    @app.route("/install.sh")
+    def installTdA27():
+        return send_file("script.sh", as_attachment=False)
+        
         
 
     return app
