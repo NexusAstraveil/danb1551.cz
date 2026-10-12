@@ -152,3 +152,19 @@ footer {
 footer p {
     margin: 0;
 }
+
+@media (max-width: 720px) {
+    header {
+        height: 128px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    header nav {
+        width: 60%;
+    }
+    .me-online nav {
+        width: 60%;
+    }
+}

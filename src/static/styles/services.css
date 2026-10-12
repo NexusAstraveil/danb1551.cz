@@ -49,3 +49,14 @@
     background: url("/static/img/img-support.png");
     background-size: cover;
 }
+
+@media (max-width: 720px) {
+    .cards {
+        display: flex;
+        flex-direction: column;
+    }
+    .card {
+        height: 320px;
+        flex: unset;
+    }
+}

@@ -32,3 +32,9 @@
 .projects a article h1:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 720px) {
+    .projects a {
+        width: 40%;
+    }
+}
