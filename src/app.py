@@ -90,23 +90,23 @@ def create_app() -> Flask:
     @app.route("/skola")
     def skola():
         return """
-const syncDelay = (ms) => { const s = Date.now(); while (Date.now() - s < ms); };
-const asyncDelay = (ms) => new Promise(res => setTimeout(res, ms));
-
-function runSynchronni() {
-    console.log("Start synchronní");
-    syncDelay(2000);
-    console.log("Konec synchronní");
-}
-
-function runAsynchronni() {
-    console.log("Start asynchronní");
-    asyncDelay(2000).then(() => console.log("Úkol na pozadí hotov!"));
-    console.log("Konec asynchronní");
-}
-
-runSynchronni();
-console.log("----------------");
+const syncDelay = (ms) => { const s = Date.now(); while (Date.now() - s < ms); };\n
+const asyncDelay = (ms) => new Promise(res => setTimeout(res, ms));\n
+\n
+function runSynchronni() {\n
+    console.log("Start synchronní");\n
+    syncDelay(2000);\n
+    console.log("Konec synchronní");\n
+}\n
+\n
+function runAsynchronni() {\n
+    console.log("Start asynchronní");\n
+    asyncDelay(2000).then(() => console.log("Úkol na pozadí hotov!"));\n
+    console.log("Konec asynchronní");\n
+}\n
+\n
+runSynchronni();\n
+console.log("----------------");\n
 runAsynchronni();​"""
 
 
